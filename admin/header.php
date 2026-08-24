@@ -64,13 +64,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<input type="checkbox" id="drop" />
 					<ul class="menu mx-lg-auto">
 						<li><a href="index.php" class="active">Home</a></li>
-						<li><a href="CategoryView.php">Category</a></li>
-						<li>
-							<!-- First Tier Drop Down -->
-							<label for="drop-2" class="toggle toogle-2">Pages <span class="fa fa-angle-down"
-									aria-hidden="true"></span>							</label>
-							<a href="ProductView.php">Product </a>
-													<li><a href="FeedbackView.php">Feedback</a></li>
+						<li><a href="CategoryView.php">Categories</a></li>
+						<li><a href="ProductView.php">Products</a></li>
+						<li><a href="FeedbackView.php">Feedback</a></li>
 						<li><a href="Logout.php">Logout</a></li>
 					</ul>
 				</nav>

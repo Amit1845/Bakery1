@@ -1,8 +1,12 @@
 <?php
 	include "header.php";
 	$cid = (int)($_REQUEST["cid"] ?? 0);
-	$stmt = mysqli_prepare($con, "SELECT * FROM product WHERE cat_id = ?");
-	mysqli_stmt_bind_param($stmt, "i", $cid);
+	if ($cid > 0) {
+		$stmt = mysqli_prepare($con, "SELECT * FROM product WHERE cat_id = ?");
+		mysqli_stmt_bind_param($stmt, "i", $cid);
+	} else {
+		$stmt = mysqli_prepare($con, "SELECT * FROM product");
+	}
 	mysqli_stmt_execute($stmt);
 	$pro = mysqli_stmt_get_result($stmt);
 ?>

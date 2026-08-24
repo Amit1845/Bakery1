@@ -35,7 +35,7 @@
 	<!-- copyright -->
 	<div class="copy_right position-relative">
 		<p class="text-center text-wh py-sm-3 py-3">� 2024 Baking. All rights reserved | Design by
-			<a href="../http://w3layouts.com/" target="_blank">Amit</a>
+			<a href="http://w3layouts.com/" target="_blank">Amit</a>
 		</p>
 		<!-- //move top icon -->
 	</div>

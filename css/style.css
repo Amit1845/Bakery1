@@ -1716,3 +1716,16 @@ a.logo {
 }
 
 /* //responsive */
+/* Mobile nav robustness: expand menus via general sibling selector too */
+@media all and (max-width : 991px) {
+    [id^=drop]:checked ~ .menu,
+    [id^=drop-2]:checked ~ ul,
+    [id^=drop]:checked+ul ul,
+    [id^=drop-2]:checked+ul ul {
+        display: block;
+        background: #fff;
+        padding: 15px 0;
+        text-align: center;
+        width: 100%;
+    }
+}

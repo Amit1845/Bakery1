@@ -129,9 +129,9 @@
 						<li><a href="About.php">About Us</a></li>
 						<li>
 							<!-- First Tier Drop Down -->
-							<label for="drop-2" class="toggle toogle-2">Categories <span class="fa fa-angle-down"
+							<label for="drop-2" class="toggle toogle-2">Products <span class="fa fa-angle-down"
 									aria-hidden="true"></span>							</label>
-							<a href="../#">Categories <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+							<a href="Product.php">Products <span class="fa fa-angle-down" aria-hidden="true"></span></a>
 							<input type="checkbox" id="drop-2" />
 							<ul>
 								<?php
