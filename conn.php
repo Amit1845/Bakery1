@@ -8,7 +8,7 @@ $db_user = getenv('MYSQLUSER') ?: 'root';
 $db_pass = getenv('MYSQLPASSWORD') ?: '';
 $db_name = getenv('MYSQLDATABASE') ?: 'bakery_shop_db';
 
-$debug = getenv('APP_DEBUG') === '1';
+$debug = getenv('APP_DEBUG') === '1' || true; // TEMP: force diagnostics until deployment issue is resolved
 
 mysqli_report(MYSQLI_REPORT_OFF);
 
