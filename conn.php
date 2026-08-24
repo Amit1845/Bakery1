@@ -20,11 +20,27 @@ if (!$con) {
 
     $env_status = '';
     foreach (array('MYSQLHOST', 'MYSQLPORT', 'MYSQLUSER', 'MYSQLPASSWORD', 'MYSQLDATABASE') as $v) {
-        $env_status .= "<li><code>$v</code>: " . (getenv($v) !== false ? 'set' : '<b>NOT SET</b>') . "</li>";
+        $val = getenv($v);
+        $shown = ($v === 'MYSQLPASSWORD')
+            ? (strlen($val) > 0 ? '(hidden, length ' . strlen($val) . ')' : '<b>EMPTY</b>')
+            : "<code>" . htmlspecialchars($val === false ? '' : $val) . "</code>";
+        $env_status .= "<li><code>$v</code>: " . ($val === false ? '<b>NOT SET</b>' : $shown) . "</li>";
     }
 
+    $all_names = array();
+    foreach (array_merge(array_keys($_SERVER), array_keys($_ENV)) as $k) {
+        if (stripos((string)$k, 'mysql') !== false || stripos((string)$k, 'sql') !== false) {
+            $all_names[] = (string)$k;
+        }
+    }
+    $all_names = array_unique($all_names);
+    sort($all_names);
+
     echo "<h1>Database connection failed</h1>"
-       . "<h3>Environment variables on this service:</h3><ul>$env_status</ul>";
+       . "<h3>Environment variables on this service:</h3><ul>$env_status</ul>"
+       . "<h3>All env var names containing 'sql':</h3>"
+       . (empty($all_names) ? '<p><b>NONE FOUND</b> — your variables are not reaching this container.</p>'
+                            : '<ul><li><code>' . implode('</code></li><li><code>', array_map('htmlspecialchars', $all_names)) . '</code></li></ul>');
     if ($debug) {
         echo "<p>Using: host=<code>" . htmlspecialchars($db_host) . "</code>"
            . " port=<code>" . htmlspecialchars($db_port) . "</code>"
