@@ -153,6 +153,7 @@
 						</li>
 						<li><a href="gallary.php">Gallery</a></li>
 						<li><a href="Feedback.php">Feedback</a></li>
+						<li><a href="admin/Login.php">Admin</a></li>
 						
 
 					</ul>
