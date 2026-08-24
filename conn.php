@@ -36,8 +36,10 @@ if (!$con) {
     $all_names = array_unique($all_names);
     sort($all_names);
 
+    $marker = getenv('TEST_MARKER');
     echo "<h1>Database connection failed</h1>"
        . "<h3>Environment variables on this service:</h3><ul>$env_status</ul>"
+       . "<p>Control variable <code>TEST_MARKER</code>: " . ($marker === false ? '<b>NOT SET</b>' : '<code>' . htmlspecialchars($marker) . '</code>') . "</p>"
        . "<h3>All env var names containing 'sql':</h3>"
        . (empty($all_names) ? '<p><b>NONE FOUND</b> — your variables are not reaching this container.</p>'
                             : '<ul><li><code>' . implode('</code></li><li><code>', array_map('htmlspecialchars', $all_names)) . '</code></li></ul>');
