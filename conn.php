@@ -24,14 +24,13 @@ if (!$con) {
     }
 
     echo "<h1>Database connection failed</h1>"
-       . "<h3>Environment variables on this service:</h3><ul>$env_status</ul>"
-       . "<p>If any are NOT SET: open your app service in Railway &rarr; <b>Variables</b> and add references"
-       . " to the MySQL service, e.g. <code>MYSQLHOST=\${{MySQL.MYSQLHOST}}</code>,"
-       . " <code>MYSQLPORT=\${{MySQL.MYSQLPORT}}</code>, <code>MYSQLUSER=\${{MySQL.MYSQLUSER}}</code>,"
-       . " <code>MYSQLPASSWORD=\${{MySQL.MYSQLPASSWORD}}</code>, <code>MYSQLDATABASE=\${{MySQL.MYSQLDATABASE}}</code>"
-       . " (replace <i>MySQL</i> with your database service's name).</p>";
+       . "<h3>Environment variables on this service:</h3><ul>$env_status</ul>";
     if ($debug) {
-        echo "<p>Raw error: " . htmlspecialchars(mysqli_connect_error()) . "</p>";
+        echo "<p>Using: host=<code>" . htmlspecialchars($db_host) . "</code>"
+           . " port=<code>" . htmlspecialchars($db_port) . "</code>"
+           . " user=<code>" . htmlspecialchars($db_user) . "</code>"
+           . " db=<code>" . htmlspecialchars($db_name) . "</code></p>"
+           . "<p>Raw error: " . htmlspecialchars(mysqli_connect_error()) . "</p>";
     }
     exit;
 }
