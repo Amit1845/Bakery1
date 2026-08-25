@@ -54,7 +54,7 @@ Easiest path on Windows is **XAMPP**:
    starting Apache.
 5. Visit `http://localhost/Backery_Shop/index.php`.
 6. Admin panel: `http://localhost/Backery_Shop/admin/Login.php`
-   (username `Namrata`, password `123` — **change this**, see below).
+   
 
 ### Changing the admin password
 
