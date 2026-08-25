@@ -3,6 +3,8 @@
 A simple bakery storefront with a public site (browse categories/products, leave
 feedback) and an admin panel (manage categories/products, view feedback).
 
+# Link Of the Website 
+https://bakery1-production.up.railway.app/
 ## What changed in this cleanup
 
 - **SQL injection fixed** across all files — every query that used to concatenate
